@@ -19,6 +19,7 @@ public class Snippet1 {
         public int c;
         public int id;
     }
+
     List<Data2> theArray;
     public boolean update(List<Data> data, String s) {
         theArray = new ArrayList<>();
@@ -63,6 +64,6 @@ public class Snippet1 {
         } else {
             return true;
         }
-        return true;
+       // return true;
     }
 }
