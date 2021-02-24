@@ -50,6 +50,7 @@ public class Snippet1 {
         }
     }
 
+
     boolean isValid(List<Data2> a, String b, int c) {
         if (a.size() == 0 || b.isEmpty()) {
             return false;
