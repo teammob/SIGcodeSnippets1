@@ -49,6 +49,7 @@ public class Snippet1 {
             return this.isValid(theArray, "default", total);
         }
     }
+
     boolean isValid(List<Data2> a, String b, int c) {
         if (a.size() == 0 || b.isEmpty()) {
             return false;
