@@ -5,67 +5,65 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Snippet1 {
-    public class Data {
-        public boolean a;
-        public String b;
-        public int c;
-        public int id;
-    }
-    public class Data2 {
-        public Data2 (int c, int id) {
-            this.c = c;
-            this.id = id;
-        }
-        public int c;
-        public int id;
-    }
 
-    List<Data2> theArray;
-    public boolean update(List<Data> data, String s) {
-        theArray = new ArrayList<>();
+    int total=0;
+    private static final String DEFAULT="default";
+
+    /***
+     *
+     * @param data
+     * @param sValue
+     * @return
+     */
+    public boolean update(List<Data> data, String sValue) {
+        List<Data2> theArray= new ArrayList<Data2>();
         int total = 0;
-        if(data.stream().filter(d -> d.b ==
-                s).collect(Collectors.toList()).size() > data.size() / 2) {
-            data.stream().filter(d -> d.a).filter(d -> d.b == s)
-                    .map(d -> new Data2(d.c, d.id)).forEach(d2 ->
-                    theArray.add(d2));
-            List<Data> filtered = data.stream().filter(d -> d.b == s &&
-                    d.a).collect(Collectors.toList());
-            for (int i = 0; i < filtered.size() - 1; i++) {
-                total += filtered.get(i).c;
-            }
-            return isValid(theArray, s, total);
+        boolean isValidResult;
+        final int halfDataSize=data.size()/2;
+        int bValueSize=data.stream()
+                .filter(d -> d.getbValue()==sValue)
+                .collect(Collectors.toList()).size();
+        if(bValueSize>halfDataSize){
+            theArray= getFilteredData(data,sValue);
+            isValidResult= isValid(theArray, sValue);
         }
         else {
-            data.stream().filter(d -> d.b == "default")
-                    .filter(d -> d.a)
-                    .map(d -> new Data2(d.c, d.id)).forEach(d2 ->
-                    theArray.add(d2));
-            List<Data> filtered = data.stream().filter(d -> d.b ==
-                    "default" && d.a).collect(Collectors.toList());
-            for (int i = 0; i < filtered.size() - 1; i++) {
-                total += filtered.get(i).c;
-            }
-            return this.isValid(theArray, "default", total);
+            theArray= getFilteredData(data,DEFAULT);
+            isValidResult=isValid(theArray, DEFAULT);
         }
+        return isValidResult;
     }
 
+    /***
+     *
+     * @param data
+     * @param s
+     * @return
+     */
+    private List<Data2> getFilteredData( List<Data> data,String s){
+        List<Data2> theArray= new ArrayList<Data2>();
+        data.stream().filter(d -> d.isaValue() && d.getbValue()==s)
+                .map(d -> new Data2(d.getcValue(),d.getId()))
+                .forEach(d2 -> theArray.add(d2));
+        List<Data> filtered = data.stream().filter(d -> d.getbValue() == s &&
+                d.isaValue()).collect(Collectors.toList());
+        for (int i = 0; i < filtered.size() - 1; i++) {
+            total += filtered.get(i).getcValue();
+        }
+        return theArray;
+    }
 
-    boolean isValid(List<Data2> a, String b, int c) {
+    /***
+     *
+     * @param a
+     * @param b
+     * @return
+     */
+    boolean isValid(List<Data2> a, String b) {
         if (a.size() == 0 || b.isEmpty()) {
             return false;
         } else {
             return true;
         }
-    }
-    boolean isEmpty(String s) {
-        if (s == "") {
-            return false;
-        } else if (s == null) {
-            return false;
-        } else {
-            return true;
-        }
-       // return true;
     }
 }
