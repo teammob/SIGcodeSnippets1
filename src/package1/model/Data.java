@@ -1,4 +1,4 @@
-package package1;
+package package1.model;
 
 /* As the part of the sepration of concern, we must separate business and model structure
 * */

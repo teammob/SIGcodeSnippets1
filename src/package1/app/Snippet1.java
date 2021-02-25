@@ -1,4 +1,7 @@
-package package1;
+package package1.app;
+
+import package1.model.Data;
+import package1.model.Data2;
 
 import java.util.ArrayList;
 import java.util.List;
