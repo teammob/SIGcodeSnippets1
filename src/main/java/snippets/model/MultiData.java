@@ -1,4 +1,5 @@
-package com.snippet.test.model;
+package main.java.snippets.model;
+
 
 /* As the part of the sepration of concern, we must separate business and model structure
  * */

@@ -1,8 +1,8 @@
-package com.snippet.test.app;
+package main.java.snippets.app;
 
+import main.java.snippets.model.BaseData;
+import main.java.snippets.model.MultiData;
 
-import com.snippet.test.model.BaseData;
-import com.snippet.test.model.MultiData;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,4 +1,4 @@
-package com.snippet.test.model;
+package main.java.snippets.model;
 
 public class BaseData {
 
