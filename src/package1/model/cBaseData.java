@@ -22,5 +22,4 @@ public class cBaseData {
         this.id = id;
     }
 
-
 }
