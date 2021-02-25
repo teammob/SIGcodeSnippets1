@@ -21,7 +21,7 @@ public class Snippet1 {
                 .collect(Collectors.toList()).size();
         if(bValueSize>halfDataSize){
             theArray= getFilteredData(data,s);
-            isValidResult= isValid(theArray, s, total);
+            isValidResult= isValid(theArray, s);
         }
         else {
             theArray= getFilteredData(data,DEFAULT);
