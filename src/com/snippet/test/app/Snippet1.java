@@ -1,8 +1,8 @@
-package package1.app;
+package com.snippet.test.app;
 
-import package1.model.MultiData;
-import package1.model.cBaseData;
 
+import com.snippet.test.model.BaseData;
+import com.snippet.test.model.MultiData;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,7 +19,7 @@ public class Snippet1 {
      * @return
      */
     public boolean update(List<MultiData> data, String sValue) {
-        List<cBaseData> theArray= new ArrayList<cBaseData>();
+        List<BaseData> theArray= new ArrayList<BaseData>();
         int total = 0;
         boolean isValidResult;
         final int halfDataSize=data.size()/2;
@@ -43,10 +43,10 @@ public class Snippet1 {
      * @param s
      * @return
      */
-    private List<cBaseData> getFilteredData(List<MultiData> data, String s){
-        List<cBaseData> theArray= new ArrayList<cBaseData>();
+    private List<BaseData> getFilteredData(List<MultiData> data, String s){
+        List<BaseData> theArray= new ArrayList<BaseData>();
         data.stream().filter(d -> d.isaValue() && d.getbValue()==s)
-                .map(d -> new cBaseData(d.getcValue(),d.getId()))
+                .map(d -> new BaseData(d.getcValue(),d.getId()))
                 .forEach(d2 -> theArray.add(d2));
         List<MultiData> filtered = data.stream().filter(d -> d.getbValue() == s &&
                 d.isaValue()).collect(Collectors.toList());
@@ -62,7 +62,7 @@ public class Snippet1 {
      * @param b
      * @return
      */
-    boolean isValid(List<cBaseData> a, String b) {
+    boolean isValid(List<BaseData> a, String b) {
         if (a.size() == 0 || b.isEmpty()) {
             return false;
         } else {
