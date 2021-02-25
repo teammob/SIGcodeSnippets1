@@ -2,30 +2,30 @@ package package1.model;
 
 public class cBaseData {
 
-    private int cData;
+    private int cValue;
     private final long id;
 
-    public int getcData() {
-        return cData;
+    public int getcValue() {
+        return cValue;
     }
 
-    public void setcData(int cData) {
-        this.cData = cData;
+    public void setcValue(int cValue) {
+        this.cValue = cValue;
     }
 
     public long getId() {
         return id;
     }
 
-    public cBaseData(int cData, long id) {
-        this.cData = cData;
+    public cBaseData(int cValue, long id) {
+        this.cValue = cValue;
         this.id = id;
     }
 
     @Override
     public String toString() {
-        return "Data2{" +
-                "cData=" + cData +
+        return "cBaseData{" +
+                "cValue=" + cValue +
                 ", id=" + id +
                 '}';
     }

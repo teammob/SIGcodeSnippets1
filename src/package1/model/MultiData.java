@@ -7,11 +7,16 @@ package package1.model;
  * @author yucelzengin
  * @version 1.0
  */
-public class MultiData {
+public class MultiData extends cBaseData{
     private boolean aValue;
     private String bValue;
-    private int cValue;
-    private final long id;
+
+
+    public MultiData(int cData, long id, boolean aValue, String bValue) {
+        super(cData, id);
+        this.aValue = aValue;
+        this.bValue = bValue;
+    }
 
     public boolean isaValue() {
         return aValue;
@@ -27,34 +32,5 @@ public class MultiData {
 
     public void setbValue(String bValue) {
         this.bValue = bValue;
-    }
-
-    public int getcValue() {
-        return cValue;
-    }
-
-    public void setcValue(int cValue) {
-        this.cValue = cValue;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public MultiData(boolean aValue, String bValue, int cValue, long id) {
-        this.aValue = aValue;
-        this.bValue = bValue;
-        this.cValue = cValue;
-        this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return "Data{" +
-                "aValue=" + aValue +
-                ", bValue='" + bValue + '\'' +
-                ", cValue=" + cValue +
-                ", id=" + id +
-                '}';
     }
 }
