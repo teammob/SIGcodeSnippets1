@@ -1,6 +1,6 @@
 package package1.model;
 
-public class Data2 {
+public class cBaseData {
 
     private int cData;
     private final long id;
@@ -17,7 +17,7 @@ public class Data2 {
         return id;
     }
 
-    public Data2(int cData, long id) {
+    public cBaseData(int cData, long id) {
         this.cData = cData;
         this.id = id;
     }

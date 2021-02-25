@@ -7,7 +7,7 @@ package package1.model;
  * @author yucelzengin
  * @version 1.0
  */
-public class Data {
+public class MultiData {
     private boolean aValue;
     private String bValue;
     private int cValue;
@@ -41,7 +41,7 @@ public class Data {
         return id;
     }
 
-    public Data(boolean aValue, String bValue, int cValue, long id) {
+    public MultiData(boolean aValue, String bValue, int cValue, long id) {
         this.aValue = aValue;
         this.bValue = bValue;
         this.cValue = cValue;

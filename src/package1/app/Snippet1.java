@@ -1,7 +1,7 @@
 package package1.app;
 
-import package1.model.Data;
-import package1.model.Data2;
+import package1.model.MultiData;
+import package1.model.cBaseData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +18,8 @@ public class Snippet1 {
      * @param sValue
      * @return
      */
-    public boolean update(List<Data> data, String sValue) {
-        List<Data2> theArray= new ArrayList<Data2>();
+    public boolean update(List<MultiData> data, String sValue) {
+        List<cBaseData> theArray= new ArrayList<cBaseData>();
         int total = 0;
         boolean isValidResult;
         final int halfDataSize=data.size()/2;
@@ -43,12 +43,12 @@ public class Snippet1 {
      * @param s
      * @return
      */
-    private List<Data2> getFilteredData( List<Data> data,String s){
-        List<Data2> theArray= new ArrayList<Data2>();
+    private List<cBaseData> getFilteredData(List<MultiData> data, String s){
+        List<cBaseData> theArray= new ArrayList<cBaseData>();
         data.stream().filter(d -> d.isaValue() && d.getbValue()==s)
-                .map(d -> new Data2(d.getcValue(),d.getId()))
+                .map(d -> new cBaseData(d.getcValue(),d.getId()))
                 .forEach(d2 -> theArray.add(d2));
-        List<Data> filtered = data.stream().filter(d -> d.getbValue() == s &&
+        List<MultiData> filtered = data.stream().filter(d -> d.getbValue() == s &&
                 d.isaValue()).collect(Collectors.toList());
         for (int i = 0; i < filtered.size() - 1; i++) {
             total += filtered.get(i).getcValue();
@@ -62,7 +62,7 @@ public class Snippet1 {
      * @param b
      * @return
      */
-    boolean isValid(List<Data2> a, String b) {
+    boolean isValid(List<cBaseData> a, String b) {
         if (a.size() == 0 || b.isEmpty()) {
             return false;
         } else {
