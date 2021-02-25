@@ -22,11 +22,5 @@ public class cBaseData {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return "cBaseData{" +
-                "cValue=" + cValue +
-                ", id=" + id +
-                '}';
-    }
+
 }
